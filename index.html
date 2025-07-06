@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8"> 
   <title>Kiên OPM</title>
   <link rel="stylesheet" href="style.css">
 
 </head>
-<body>
+ <body>
 
   <h1>🔥 các lệnh code thường dùng</h1>
 
@@ -15,32 +15,86 @@
   <p>Dòng mới được thêm bằng thẻ <code>&lt;br&gt;</code><br>Đây là dòng mới.</p>
 
   <hr>
-
-  <h2>🔹 Liên kết và hình ảnh</h2>
-  <a href="https://google.com" target="_blank">Truy cập Google</a><br><br>
-  <img src="https://via.placeholder.com/200x100" alt="Ảnh minh họa" width="200">
+   <h2>Nhập ngày tháng năm sinh để biết số tuổi hiện tại của bạn</h2>
+   <div class="container">
+    <input type="date" onchange="age.innerText = new Date().getFullYear() - new Date(this.value).getFullYear()">
+    <p>Tuổi của bạn là: <span id="age"></span></p>
+   </div>
 
   <hr>
 
-  <h2>🔹 Danh sách</h2>
-  <p><b>Danh sách không thứ tự:</b></p>
-  <ul>
+   <h2>Nghe nhạc đê</h2>
+   <div class="card">
+    <iframe src="" width="50%"height=50%></iframe>  
+   </div> 
+
+  <hr>
+
+   <h2>Nhập điều bạn muốn nghe</h2>
+   <input placeholder="nhập đi nhìn gì...." id="text">
+   <button onclick="speechSynthesis.speak(new SpeechSynthesisUtterance(text.value))">NGHE</button>
+
+  <hr>
+
+   <h2>🔹THỜI GIAN</h2>
+   <p id="clook"></p>
+   <script>
+    setInterval(() => {clook.innerText = new Date().toLocaleTimeString()},1000)
+   </script>
+
+  <hr>  
+
+   <h2>đổi đen/trắng</h2>   
+   <input type="checkbox" onclick="document.body.classList.toggle('dark')">
+  
+
+  <hr>
+
+   <h2>🔹 Liên kết và hình ảnh  </h2>
+   <a href="https://google.com" target="_blank">Truy cập Google</a><br><br>
+   <img src="https://cdn.pixabay.com/photo/2014/11/30/14/11/cat-551554_960_720.jpg"/>
+
+  <hr>
+   
+   <div class="buttons">
+    <button class="buttons__toggle"><i class="fa flex-share-alt"></i></button>
+    <div class="buttons__ctas">
+      <a class="buttons__cta" href="#"
+       ><i class="fa-brands fa-facebook-f"></i>facebook</a>
+            <a class="buttons__cta" href="#"
+       ><i class="fa-brands fa-twitter-f"></i>twitter</a>
+             <a class="buttons__cta" href="#"
+       ><i class="fa-brands fa-instagram-f"></i>instagram</a>
+             <a class="buttons__cta" href="#"
+       ><i class="fa-brands fa-youtube-f"></i>youtube</a>
+             <a class="buttons__cta" href="#"
+       ><i class="fa-brands fa-tiktok-f"></i>tiktok</a>
+             <a class="buttons__cta" href="#"
+       ><i class="fa-brands fa-linkedin-f"></i>linkedin</a>
+    </div>
+   </div>
+
+  <hr>
+
+   <h2>🔹 Danh sách</h2>
+   <p><b>Danh sách không thứ tự:</b></p>
+   <ul>
     <li>HTML</li>
     <li>CSS</li>
     <li>JavaScript</li>
-  </ul>
+   </ul>
 
-  <p><b>Danh sách có thứ tự:</b></p>
-  <ol>
+   <p><b>Danh sách có thứ tự:</b></p>
+   <ol>
     <li>Khởi động máy</li>
     <li>Mở VS Code</li>
     <li>Bắt đầu code</li>
-  </ol>
+   </ol>
 
   <hr>
 
-  <h2>🔹 Bảng dữ liệu</h2>
-  <table>
+   <h2>🔹 Bảng dữ liệu</h2>
+   <table>
     <tr>
       <th>Tên</th>
       <th>Tuổi</th>
@@ -53,30 +107,40 @@
       <td>Mai</td>
       <td>22</td>
     </tr>
-  </table>
+   </table>
 
   <hr>
 
-  <div class="flex-container">
-    <input class="name" placeholder="Tài khoản" />
-    <input class="email" placeholder="Mật khẩu"/>
+   <h2>kểu đăng nhập</h2>
+   <form class="flex-container">
+    <input placeholder="mật khẩu" type="text".pattern="[A-Za-z]{6,}" required>
     <button>Đăng Nhập</button>
-  </div>
+   </form>  
 
-  <h2>🔹 Form nhập liệu + JavaScript</h2>
-  <form onsubmit="return kiemTraForm()">
+  <hr>
+
+   <div class="flex-container">
+    <input placeholder="tài khoản" type="text".pattern="[A-Za-z]{6,}" required>
+    <input placeholder="mật khẩu" type="text".pattern="[A-Za-z]{6,}" required>
+    <button>Đăng Nhập</button>
+   </div>
+
+  <hr>
+
+   <h2>🔹 Form nhập liệu + JavaScript</h2>
+   <form onsubmit="return kiemTraForm()">
     <label for="ten">Tên của bạn:</label>
     <input type="text" id="ten" name="ten" placeholder="Nhập tên">
     <input type="submit" value="Gửi">
-  </form>
+   </form>
 
-  <p id="thongbao"></p>
+   <p id="thongbao"></p>
 
   <hr>
 
-  <h2>🔹 Nút JavaScript</h2>
-  <p id="demo">Chưa có gì xảy ra...</p>
-  <button onclick="thayDoiNoiDung()">Bấm vào tôi!</button>
+   <h2>🔹 Nút JavaScript</h2>
+   <p id="demo">Chưa có gì xảy ra...</p>
+   <button onclick="thayDoiNoiDung()">Bấm vào tôi!</button>
 
   <hr>
 
@@ -85,5 +149,5 @@
   <p>Đây là một đoạn <span class="highlight">chữ nổi bật</span>.</p>
 
   <script src="script.js"></script>
-</body>
+ </body>
 </html>
