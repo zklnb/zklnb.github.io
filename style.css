@@ -1,75 +1,84 @@
+/* Áp dụng cho toàn bộ trang */
 body {
-  font-family: Arial, sans-serif;
-  background-color: white;
-  padding: 20px;
+  font-family: Arial, sans-serif;   /* Font chữ toàn trang */
+  background-color: white;          /* Nền mặc định màu trắng */
+  padding: 20px;                    /* Khoảng cách viền trong body */
 }
 
+/* Căn giữa toàn bộ nội dung có class 'toan-bo-giua' */
 .toan-bo-giua {
-  text-align: center;
+  text-align: center;               /* Căn giữa nội dung bên trong */
 }
 
+/* Khi bật chế độ nền tối (class 'dark' được gắn vào <body>) */
 body.dark {
-  background: #111;
-  color: white;
+  background: #111;                 /* Đổi nền sang màu đen đậm */
+  color: white;                     /* Chữ trắng để dễ nhìn */
 }
 
-
-
-.buttons--active .buttons__ctas {
-  transform: translate(-50%, -50%) rotate(0deg);
-}
-.buttons--active .buttons__ctas:nth-child(1) {
-  transform: translate(-110, -150%) rotate(0deg);
-}
-.buttons--active .buttons__ctas:nth-child(2) {
-  transform: translate(10%, -150%) rotate(0deg);
-}
-.buttons--active .buttons__ctas:nth-child(3) {
-  transform: translate(65%, -50%) rotate(0deg);
-}
-.buttons--active .buttons__ctas:nth-child(4) {
-  transform: translate(10%, 50%) rotate(0deg);
-}
-.buttons--active .buttons__ctas:nth-child(5) {
-  transform: translate(-110%, 50%) rotate(0deg);
-}
-.buttons--active .buttons__ctas:nth-child(6) {
-  transform: translate(-165, -50%) rotate(0deg);
-}
-
-
-
+/* Bảng dữ liệu */
 table {
-  border-collapse: collapse;
-  width: 300px;
-  margin-bottom: 20px;
+  border-collapse: collapse;        /* Gộp viền lại sát nhau */
+  width: 300px;                     /* Rộng cố định 300px */
+  margin-bottom: 20px;              /* Cách phần dưới 20px */
 }
 
+/* Ô trong bảng (cả thẻ th và td) */
 th, td {
-  border: 1px solid #b93838;
-  padding: 5px;
-  text-align: center;
+  border: 1px solid #b93838;        /* Viền đỏ sẫm */
+  padding: 5px;                     /* Đệm trong ô */
+  text-align: center;               /* Căn giữa nội dung ô */
 }
 
+/* Nút chung */
+button {
+  padding: 10px;                    /* Đệm trong nút */
+  background-color: green;          /* Nền màu xanh lá */
+  color: white;                     /* Chữ trắng */
+  border: none;                     /* Không viền */
+  cursor: pointer;                  /* Con trỏ thành bàn tay khi rê chuột */
+}
+
+/* Nút khi hover */
+button:hover {
+  background-color: darkgreen;      /* Đổi sang xanh đậm khi rê chuột */
+}
+
+/* Khối DIV nổi bật (dùng trong phần 'hop-div') */
+.hop-div {
+  background-color: lightblue;      /* Nền màu xanh nhạt */
+  padding: 10px;                    /* Đệm bên trong */
+  margin-top: 10px;                 /* Cách phía trên */
+}
+
+/* Dùng cho chữ nổi bật bằng <span class="highlight"> */
+.highlight {
+  color: red;                       /* Chữ màu đỏ */
+  font-weight: bold;               /* Đậm chữ */
+}
+
+/* Làm nút chuyển màu mượt mà hơn khi hover */
 button {
   padding: 10px;
   background-color: green;
   color: white;
   border: none;
   cursor: pointer;
+
+  transition: background-color 0.3s ease; /* Chuyển màu mượt trong 0.3 giây */
 }
 
 button:hover {
-  background-color: darkgreen;
+  background-color: darkgreen; /* Khi rê chuột vào, đổi sang màu xanh đậm */
 }
 
-.hop-div {
-  background-color: lightblue;
-  padding: 10px;
-  margin-top: 10px;
-}
+/* Bảng dữ liệu thêm bóng và bo góc */
+table {
+  border-collapse: collapse;         /* Gộp viền ô lại */
+  width: 300px;
+  margin-bottom: 20px;
 
-.highlight {
-  color: red;
-  font-weight: bold;
+  border-radius: 5px;                /* Bo tròn góc bảng */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Đổ bóng nhẹ */
+  overflow: hidden;                  /* Ẩn tràn nếu bo góc */
 }
