@@ -1,13 +1,43 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
+  background-color: white;
   padding: 20px;
 }
 
-h1 {
-  margin-right: 50%; 
-  color: #00cc29;
+.toan-bo-giua {
+  text-align: center;
 }
+
+body.dark {
+  background: #111;
+  color: white;
+}
+
+
+
+.buttons--active .buttons__ctas {
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+.buttons--active .buttons__ctas:nth-child(1) {
+  transform: translate(-110, -150%) rotate(0deg);
+}
+.buttons--active .buttons__ctas:nth-child(2) {
+  transform: translate(10%, -150%) rotate(0deg);
+}
+.buttons--active .buttons__ctas:nth-child(3) {
+  transform: translate(65%, -50%) rotate(0deg);
+}
+.buttons--active .buttons__ctas:nth-child(4) {
+  transform: translate(10%, 50%) rotate(0deg);
+}
+.buttons--active .buttons__ctas:nth-child(5) {
+  transform: translate(-110%, 50%) rotate(0deg);
+}
+.buttons--active .buttons__ctas:nth-child(6) {
+  transform: translate(-165, -50%) rotate(0deg);
+}
+
+
 
 table {
   border-collapse: collapse;
@@ -16,7 +46,7 @@ table {
 }
 
 th, td {
-  border: 1px solid #999;
+  border: 1px solid #b93838;
   padding: 5px;
   text-align: center;
 }
@@ -27,12 +57,6 @@ button {
   color: white;
   border: none;
   cursor: pointer;
-}
-
-.flex-container {
-  display: flex;
-  flex-wrap:  wrap;
-  gap: 16px;
 }
 
 button:hover {
